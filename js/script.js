@@ -61,9 +61,9 @@ $(function(){
         for (var i = 0; i < categories.length; i++) {
     // Insert category's values
         var html = categoryHtml;
-        var name = "" + categories[i].name;
+        var food_name = "" + categories[i].name;
         var short_name = categories[i].short_name;
-        html =insertProperty(html, "name", name);
+        html =insertProperty(html, "food_name", food_name);
         html =insertProperty(html,"short_name",short_name);
         finalHtml += html;
         }
