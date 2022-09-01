@@ -172,7 +172,7 @@ $(function(){
           var chosenCategoryShortName = chooseRandomCategory(categories);
           // insert this category to home html snippet
           var homeHtmlToInsertIntoMainPage = homeHtml;
-          homeHtmlToInsertIntoMainPage=insertProperty(homeHtmlToInsertIntoMainPage,"randomCategoryShortName",chooseRandomCategory);
+          homeHtmlToInsertIntoMainPage=insertProperty(homeHtmlToInsertIntoMainPage,"randomCategoryShortName",chosenCategoryShortName);
           insertHtml("#main-content",homeHtmlToInsertIntoMainPage);
         },
         false);
