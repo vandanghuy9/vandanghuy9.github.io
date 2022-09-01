@@ -19,7 +19,7 @@ $(function(){
     var menuItemsUrl ="https://davids-restaurant.herokuapp.com/menu_items.json?category=";
     var menuItemsTitleHtml = "snippets/menu-item-title.html";
     var menuItemHtml = "snippets/menu-item.html";
-    var InsertProperty =function(string,propName,propValue){
+    var insertProperty =function(string,propName,propValue){
         var propString = "{{" + propName + "}}";
         string = string.replace(new RegExp(propString,"g"),propValue);
         return string;
