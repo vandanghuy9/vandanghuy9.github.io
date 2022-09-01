@@ -159,13 +159,29 @@ $(function(){
     // On first load, show home view
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
-      homeHtml,
-      function (responseText) {
-        document.querySelector("#main-content")
-          .innerHTML = responseText;
-      },
-      false);
+      allCategoriesUrl,buildAndShowHomeHTML,true);
+
+      //Build HTML home page based on categories array
+      //returned from server
     });
+    
+    function buildAndShowHomeHTML(categories){
+      $ajaxUtils.sendGetRequest(
+        homeHtml,
+        function(homeHtml){
+          var chosenCategoryShortName = chooseRandomCategory(categories);
+          // insert this category to home html snippet
+          var homeHtmlToInsertIntoMainPage = homeHtml;
+          homeHtmlToInsertIntoMainPage=insertProperty(homeHtmlToInsertIntoMainPage,"{{randomCategoryShortName}}",chooseRandomCategory);
+          insertHtml("#main-content",homeHtmlToInsertIntoMainPage);
+        },
+        false);
+    }
+
+    function chooseRandomCategory(categories){
+      var RandomIndex= Math.floor(Math.random() * categories.length);
+      return categories[RandomIndex];
+    }
     
     
     global.$dc = dc;
