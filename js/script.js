@@ -57,7 +57,9 @@ $(function(){
     );
   }
   function buildOrderItemViewHtml(categoryMenuItems,orderItemHtml,i){
-    orderItemHtml = insertProperty(orderItemHtml,"short name",categoryMenuItems[i].name); //insert name
+    orderItemHtml = insertProperty(orderItemHtml,"name",categoryMenuItems[i].name);
+    orderItemHtml = insertProperty(orderItemHtml,"short_name",categoryMenuItems[i].short_name);
+     //insert name
     var finalHtml = orderItemHtml;
     if (categoryMenuItems[i].description){
       finalHtml = insertProperty(finalHtml,"description",categoryMenuItems[i].description);
