@@ -243,6 +243,40 @@ a .category-tile:hover{
     font-size: 0.9em;
     font-style: italic;
 }
+
+.menu-item-photo .img-responsive{
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+.item-description{
+    padding: 0 20px 0 20px;
+    font-size: 1.2em;
+}
+.item-description div{
+    padding: 10px 0 10px 0;
+}
+.item-description h3{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.item-description .item-size{
+    font-size: 1.2em;
+}
+
+
+.item-description button{
+    background-color: #f6b319;
+}
+
+.item-description .description{
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+
 @media (min-width: 1200px){
     .jumbotron{
         margin-top:10px;
