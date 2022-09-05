@@ -57,7 +57,7 @@ $(function(){
     );
   }
   function buildOrderItemViewHtml(categoryMenuItems,orderItemHtml,i){
-    var menuItems = categoryMenuItems.menuItems;
+    var menuItems = categoryMenuItems.menu_items;
     orderItemHtml = insertProperty(orderItemHtml,"name",menuItems[i].name);
     orderItemHtml = insertProperty(orderItemHtml,"short_name",menuItems[i].short_name);
      //insert name
