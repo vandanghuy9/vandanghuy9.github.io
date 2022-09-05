@@ -141,7 +141,6 @@ $(function(){
     for (var i = 0; i < menuItems.length; i++) {
     // Insert menu item values
     var html = menuItemHtml;
-    html = insertProperty(html,"i",i);
     html = insertProperty(html, "short_name", menuItems[i].short_name);
     html =insertProperty(html,"catShortName",catShortName);
     html = insertItemPrice(html,"price_small",menuItems[i].price_small);
