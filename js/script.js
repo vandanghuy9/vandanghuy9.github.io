@@ -37,44 +37,44 @@ $(function(){
       buildAndShowMenuItemsHTML);
   };
 
-  dc.loadOrderItem = function(i){
-    showLoading("#main-content");
-    // need a function to insert property and build view
-    buildAndShowOrderItemHtml(categoryMenuItems,i);
-  }
+//   dc.loadOrderItem = function(i){
+//     showLoading("#main-content");
+//     // need a function to insert property and build view
+//     buildAndShowOrderItemHtml(categoryMenuItems,i);
+//   }
 
-  function buildAndShowOrderItemHtml(categoryMenuItems,i){
-    $ajaxUtils.sendGetRequest(
-      orderItemHtml,
-      function(orderItemHtml,i){
-        var orderItemViewHtml = 
-        buildOrderItemViewHtml(categoryMenuItems,
-                            orderItemHtml,
-                            i);
-        insertHtml("#main-content", orderItemViewHtml);
-      },
-      false
-    );
-  }
-  function buildOrderItemViewHtml(categoryMenuItems,orderItemHtml,i){
-    var menuItems = categoryMenuItems.menu_items;
-    orderItemHtml = insertProperty(orderItemHtml,"name",menuItems[i].name);
-    orderItemHtml = insertProperty(orderItemHtml,"short_name",menuItems[i].short_name);
-     //insert name
-    var finalHtml = orderItemHtml;
-    if (menuItems[i].description){
-      finalHtml = insertProperty(finalHtml,"description",menuItems[i].description);
-    }
-    if (categoryMenuItems[i].large_portion_name != null){
-      finalHtml = insertProperty(finalHtml,"large_portion_name",menuItems[i].large_portion_name);
-      finalHtml = insertItemPrice(finalHtml,"price_large",menuItems[i].price_large);
-    }
-    if (categoryMenuItems[i].small_portion_name != null){
-      finalHtml = insertProperty(finalHtml,"small_portion_name",menuItems[i].small_portion_name);
-      finalHtml = insertItemPrice(finalHtml,"price_small",menuItems[i].price_small);
-    }
-    return finalHtml;
-  }
+//   function buildAndShowOrderItemHtml(categoryMenuItems,i){
+//     $ajaxUtils.sendGetRequest(
+//       orderItemHtml,
+//       function(orderItemHtml,i){
+//         var orderItemViewHtml = 
+//         buildOrderItemViewHtml(categoryMenuItems,
+//                             orderItemHtml,
+//                             i);
+//         insertHtml("#main-content", orderItemViewHtml);
+//       },
+//       false
+//     );
+//   }
+//   function buildOrderItemViewHtml(categoryMenuItems,orderItemHtml,i){
+//     var menuItems = categoryMenuItems.menu_items;
+//     orderItemHtml = insertProperty(orderItemHtml,"name",menuItems[i].name);
+//     orderItemHtml = insertProperty(orderItemHtml,"short_name",menuItems[i].short_name);
+//      //insert name
+//     var finalHtml = orderItemHtml;
+//     if (menuItems[i].description){
+//       finalHtml = insertProperty(finalHtml,"description",menuItems[i].description);
+//     }
+//     if (categoryMenuItems[i].large_portion_name != null){
+//       finalHtml = insertProperty(finalHtml,"large_portion_name",menuItems[i].large_portion_name);
+//       finalHtml = insertItemPrice(finalHtml,"price_large",menuItems[i].price_large);
+//     }
+//     if (categoryMenuItems[i].small_portion_name != null){
+//       finalHtml = insertProperty(finalHtml,"small_portion_name",menuItems[i].small_portion_name);
+//       finalHtml = insertItemPrice(finalHtml,"price_small",menuItems[i].price_small);
+//     }
+//     return finalHtml;
+//   }
 
   function buildAndShowCategoriesHTML(categories){
       $ajaxUtils.sendGetRequest(
