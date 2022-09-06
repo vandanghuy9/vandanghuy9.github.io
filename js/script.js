@@ -254,7 +254,8 @@ function insertItemPortionName(html,
         var chosenCategoryShortName = chooseRandomCategory(categories);
         // insert this category to home html snippet
         var homeHtmlToInsertIntoMainPage = homeHtml;
-        homeHtmlToInsertIntoMainPage=insertProperty(homeHtmlToInsertIntoMainPage,"randomCategoryShortName",chooseRandomCategory.short_name);
+        homeHtmlToInsertIntoMainPage=insertProperty(homeHtmlToInsertIntoMainPage,"randomCategoryShortName",chosenCategoryShortName.short_name); 
+        //replace random catName = chosenCat.short_name
         insertHtml("#main-content",homeHtmlToInsertIntoMainPage);
       },
       false);
