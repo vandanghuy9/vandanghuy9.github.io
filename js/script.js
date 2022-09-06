@@ -61,15 +61,12 @@ var switchMenuToActive = function () {
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
 
-// On first load, show home view
-showLoading("#main-content");
-$ajaxUtils.sendGetRequest(
-  homeHtml,
-  function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-  },
-  false);
+ showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    allCategoriesUrl,buildAndShowHomeHTML,true);
+
+    //Build HTML home page based on categories array
+    //returned from server
 });
 
 // Load the menu categories view
@@ -270,18 +267,6 @@ function insertItemPortionName(html,
   html = insertProperty(html, portionPropName, portionValue);
   return html;
 }
-
- // On page load (before images or CSS)
-  document.addEventListener("DOMContentLoaded", function (event) {
-  
-  // On first load, show home view
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    allCategoriesUrl,buildAndShowHomeHTML,true);
-
-    //Build HTML home page based on categories array
-    //returned from server
-  });
   
   function buildAndShowHomeHTML(categories){
     $ajaxUtils.sendGetRequest(
