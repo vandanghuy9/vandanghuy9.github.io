@@ -213,7 +213,7 @@ function buildMenuItemsViewHtml(categoryMenuItems,
     // Add clearfix after every second menu item
     if (i % 2 != 0) {
       html +=
-        "<div class='clearfix visible-lg-block visible-md-block'></div>";
+        "<div class='clearfix d-none d-md-block d-lg-block d-xl-none'></div>";
     }
 
     finalHtml += html;
