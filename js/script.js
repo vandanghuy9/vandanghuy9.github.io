@@ -84,9 +84,6 @@ function buildAndShowCategoriesHTML (categories) {
       $ajaxUtils.sendGetRequest(
         categoryHtml,
         function (categoryHtml) {
-          // Switch CSS class active to menu button
-          switchMenuToActive();
-
           var categoriesViewHtml =
             buildCategoriesViewHtml(categories,
                                     categoriesTitleHtml,
