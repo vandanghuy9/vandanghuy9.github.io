@@ -57,18 +57,21 @@ $(function(){
     );
   }
   function buildOrderItemViewHtml(categoryMenuItems,orderItemHtml,i){
-    orderItemHtml = insertProperty(orderItemHtml,"short name",categoryMenuItems[i].name); //insert name
+    var menuItems = categoryMenuItems.menuItems;
+    orderItemHtml = insertProperty(orderItemHtml,"name",menuItems[i].name);
+    orderItemHtml = insertProperty(orderItemHtml,"short_name",menuItems[i].short_name);
+     //insert name
     var finalHtml = orderItemHtml;
-    if (categoryMenuItems[i].description){
-      finalHtml = insertProperty(finalHtml,"description",categoryMenuItems[i].description);
+    if (menuItems[i].description){
+      finalHtml = insertProperty(finalHtml,"description",menuItems[i].description);
     }
     if (categoryMenuItems[i].large_portion_name != null){
-      finalHtml = insertProperty(finalHtml,"large_portion_name",categoryMenuItems[i].large_portion_name);
-      finalHtml = insertItemPrice(finalHtml,"price_large",categoryMenuItems[i].price_large);
+      finalHtml = insertProperty(finalHtml,"large_portion_name",menuItems[i].large_portion_name);
+      finalHtml = insertItemPrice(finalHtml,"price_large",menuItems[i].price_large);
     }
     if (categoryMenuItems[i].small_portion_name != null){
-      finalHtml = insertProperty(finalHtml,"small_portion_name",categoryMenuItems[i].small_portion_name);
-      finalHtml = insertItemPrice(finalHtml,"price_small",categoryMenuItems[i].price_small);
+      finalHtml = insertProperty(finalHtml,"small_portion_name",menuItems[i].small_portion_name);
+      finalHtml = insertItemPrice(finalHtml,"price_small",menuItems[i].price_small);
     }
     return finalHtml;
   }
