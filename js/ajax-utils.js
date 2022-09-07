@@ -51,6 +51,13 @@
     
         if (isJsonResponse) {
           responseHandler(JSON.parse(request.responseText));
+          //responseHandler is actually a function
+          // when 2 above condition is true it will return result(responseText)
+          // and we use that responseText as parameter for responseHandler
+          // How to dynamically load html
+          // B1: Get data from server
+          // B2: Use responseText (json) to insert Html
+          // B3: Get inserted Html from server
         }
         else {
           responseHandler(request.responseText);
