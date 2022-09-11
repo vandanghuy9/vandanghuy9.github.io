@@ -230,6 +230,10 @@ a .category-tile:hover{
     background-color: #808080;
     border-radius: 20%;
 }
+
+.menu-item-photo:hover{
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
 .menu-item-description{
     padding-right: 30px;
 }

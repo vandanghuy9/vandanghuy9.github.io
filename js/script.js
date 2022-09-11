@@ -83,8 +83,8 @@ dc.loadOrderItem = function (categoryShort,index){
           var buildOrderItemView = 
           buildOrderItemViewHtml(orderItemHtml,menuItemsCategory,index);
           insertHtml("#main-content",buildOrderItemView);
-        }
-      );
+        },
+      false);
     }
   );
 };
